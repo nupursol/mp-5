@@ -5,12 +5,15 @@ export default async function AliasRedirect({
                                                 params,
                                             }: {
     params: { alias: string };
-})  {
-    const collection = await getCollection(URLS_COLLECTION); //get the collection
-    const doc = await collection.findOne({ alias: params.alias }); //find the alias  entered
-    if (!doc) { // try to find the alias user entered
+}) {
+    console.log("PARAMS", params.alias);
+
+    const collection = await getCollection(URLS_COLLECTION);
+    const doc = await collection.findOne({ alias: params.alias });
+
+    if (!doc) {
         notFound();
     }
-    // or else redirect to the actual long input URL
+
     redirect(doc.longUrl);
 }
