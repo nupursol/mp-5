@@ -47,7 +47,7 @@ export default async function createUrl(longUrl: string, alias: string) {
     //const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
     return {
         id: result.insertedId.toHexString(),
-        shortUrl:` https://mp-5.vercel.app/${alias}`, // our final short url
+        shortUrl:` https://mp-5-murex.vercel.app/${alias}`, // our final short url
         longUrl,
     };
 }
